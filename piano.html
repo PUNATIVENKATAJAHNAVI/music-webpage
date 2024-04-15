@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Multiple Instrumentals</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      /*background-image:url('orange.jpg');*/
+      background-color: peachpuff;
+      background-size: 260px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .song {
+      margin: 0 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: black;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .song-info {
+      margin-top: 10px;
+    }
+
+    audio {
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    audio::-webkit-media-controls-panel {
+      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+    .song-image {
+      width: 400px;
+      height: 200px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>Flute Music</h1>
+  <div class="container">
+    <div class="song">
+      <h2>Song 1</h2>
+      <img class="song-image" src="./images/piano.jpeg" alt="song 1">
+      
+      <audio controls id="instrumental1">
+        <source src="./audio/piano.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      
+    </div>
+
+    <div class="song">
+      <h2>Song 2</h2>
+      <img class="song-image" src="./images/piano.jpeg" alt="song 2">
+      
+      <audio controls id="instrumental2">
+        <source src="./audio/piano2.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      
+    </div>
+
+    <div class="song">
+      <h2>Song 3</h2>
+      <img class="song-image" src="./images/piano.jpeg" alt="song 3">
+      
+      <audio controls id="instrumental3">
+        <source src="./audio/piano3.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      
+    </div>
+  </div>
+
+  <script>
+    const instrumentalElements = document.querySelectorAll("audio");
+
+    instrumentalElements.forEach(instrumental => {
+      instrumental.addEventListener("play", () => {
+        pauseOtherInstrumentals(instrumental);
+      });
+    });
+
+    function pauseOtherInstrumentals(currentInstrumental) {
+      instrumentalElements.forEach(instrumental => {
+        if (instrumental !== currentInstrumental && !instrumental.paused) {
+          instrumental.pause();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+

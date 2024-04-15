@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sid Sriram</title>
+  <link rel="stylesheet" type="text/css" href="songs.css">
+</head>
+<body>
+    <header>
+      <nav>
+          <a href="final.html" class = "btn">HOME</a>
+          <a href="tags.html" class="btn">ALBUMS</a>  
+          <a href="singers.html" class = "btn">ARTISTS</a>
+          <a href="contact.html" class = "btn">CONTACT</a>
+          
+          <button id="logoutButton" class="btn" style = "float:right">LOGOUT</button>        
+      </nav>
+  </header>
+  </body>
+<body>
+  <h1>Armaan Malik</h1>
+  <br><br>
+  <div class="container">
+    <div class="song">
+      <!--<h2>Song 1</h2>-->
+      <img class="song-image" src="./images/buttabomma.jpg" alt="song 1">
+      <marquee behaviour="scroll">Buttabomma(Ala Vaikuntapuramlo)</marquee>
+      <audio controls id="instrumental1">
+        <source src="./audio/ButtaBomma.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="song-info">
+        <h3>Movie Name: Ala Vaikuntapuramlo</h3>
+        <h4>Actors: Allu Arjun, Pooja Hegde</h4>
+        <h4>Singers: Armaan Malik</h4>
+      </div>
+    </div>
+
+    <div class="song">
+      <!--<h2>Song 2</h2>-->
+      <img class="song-image" src="./images/jabtak.jpg" alt="song 2">
+      <marquee behaviour="scroll">Jab Tak(M.S.Dhoni)</marquee>
+      <audio controls id="instrumental2">
+        <source src="./audio/Jab Tak.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="song-info">
+        <h3>Movie Name: M.S.Dhoni(The Untold Story)</h3>
+        <h4>Actors: Sushanth Singh Rajput,Kiara Advani,Disha Patani </h4>
+        <h4>Singers: Armaan Malik</h4>
+      </div>
+    </div>
+
+    <div class="song">
+      <!--<h2>Song 3</h2>-->
+      <img class="song-image" src="./images/kopamga.jpg" alt="song 3">
+      <marquee behaviour="scroll">Kopamga Kopamga(Mr. Majnu)</marquee>
+      <audio controls id="instrumental3">
+        <source src="./audio/Koppamga Kopamga.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="song-info">
+        <h3>Movie Name: Mr. Majnu</h3>
+        <h4>Actors: Akhil Akkineni, Nidhi Agarwal</h4>
+        <h4>Singers: Armaan Malik</h4>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const instrumentalElements = document.querySelectorAll("audio");
+
+    instrumentalElements.forEach(instrumental => {
+      instrumental.addEventListener("play", () => {
+        pauseOtherInstrumentals(instrumental);
+      });
+    });
+
+    function pauseOtherInstrumentals(currentInstrumental) {
+      instrumentalElements.forEach(instrumental => {
+        if (instrumental !== currentInstrumental && !instrumental.paused) {
+          instrumental.pause();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Singer Choice</title>
+  <link rel = "stylesheet" type="text/css" href="songs.css">
+</head>
+<body>
+  <header>
+    <nav>
+        <a href="final.html" class = "btn">HOME</a>
+        <a href="tags.html" class="btn">ALBUMS</a>  
+        <a href="singers.html" class = "btn">ARTISTS</a>
+        <a href="contact.html" class = "btn">CONTACT</a>
+        
+        <button id="logoutButton" class="btn" style = "float:right">LOGOUT</button>        
+    </nav>
+</header>
+</body>
+<body>
+  <h1>Arijith Singh</h1>
+  <div class="container">
+    <div class="song">
+      
+      <img class="song-image" src="./images/satyaprem.jpg" alt="song 1">
+      <marquee behaviour="scroll">Le Aaunga(SatyaPrem Ki Katha)</marquee>
+      <audio controls id="instrumental1">
+        <source src="./audio/LeAaunga.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="song-info">
+        <h3>Movie Name: SatyaPrem ki Katha</h3>
+        <h4>Actors: Karthik Aaryan, Kiara Advani</h4>
+        <h4>Singers: Arijith Singh</h4>
+      </div>
+    </div>
+
+    <div class="song">
+      
+      <img class="song-image" src="./images/rocky.jpg" alt="song 2">
+      <marquee behaviour="scroll">Tum Kya Mile(Rocky Aur Rani Kii Prem Kahaani)</marquee>
+      <audio controls id="instrumental2">
+        <source src="./audio/TumKyamile.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="song-info">
+        <h3>Movie Name: Rocky Aur Rani Kii Prem Kahaani</h3>
+        <h4>Actors: Ranveer Singh, Alia Bhatt</h4>
+        <h4>Singers: Arijith Singh, Shreya Ghoshal</h4>
+      </div>
+    </div>
+
+    
+
+      <div class="song">
+        
+        <img class="song-image" src="./images/aashiqui2.jpg" alt="song 3">
+        <marquee behaviour="scroll">Tum Hi Ho(aashiqui2)</marquee>
+        <audio controls id="instrumental3">
+          <source src="./audio/Tumhiho.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <div class="song-info">
+          <h3>Movie Name: Aashiqui2</h3>
+          <h4>Actors: Aditya Roy Kapur, Shraddha Kapoor</h4>
+          <h4>Singers: Arijith Singh</h4>
+        </div>
+    </div>
+  </div>
+
+  <script>
+    const instrumentalElements = document.querySelectorAll("audio");
+
+    instrumentalElements.forEach(instrumental => {
+      instrumental.addEventListener("play", () => {
+        pauseOtherInstrumentals(instrumental);
+      });
+    });
+
+    function pauseOtherInstrumentals(currentInstrumental) {
+      instrumentalElements.forEach(instrumental => {
+        if (instrumental !== currentInstrumental && !instrumental.paused) {
+          instrumental.pause();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+

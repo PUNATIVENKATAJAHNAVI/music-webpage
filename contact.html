@@ -1,0 +1,137 @@
+<html>
+<head>
+<title>Music page</title>
+
+<style>
+
+.container{
+/*max-width:1000px;*/
+margin:0 auto;
+padding:0px;
+/*background-color:white;*/
+opacity:0.9;
+}
+header {
+    /*background-color: lightblue;*/
+    overflow: hidden;
+   
+    padding: 20px;
+    /*width: 100%;*/
+}
+  
+  header a {
+    /*margin-right:20px;*/
+    text-decoration:none;
+    color: black;
+    font-weight: normal;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+  }
+ header a:hover {
+  background-color: #f4f0f0dc;
+  color: black;
+}
+html, body {
+ margin: 0;
+ 
+ 
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: hsla(26, 57%, 74%, 0.707);
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.login-container {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #050505;
+  border-radius: 5px;
+  background-color: white;
+  
+}
+
+.form-group {
+  margin-bottom: 10px;
+ 
+}
+
+label {
+  display: block;
+}
+
+input[type="text"],
+input[type="password"], 
+input[type = "Email"]{
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
+  background-color: #dcd7d2;
+}
+
+h2{
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <nav>
+            <a href="final.html" class="btn">HOME</a>
+            <a href="tags.html" class="btn">ALBUMS</a>
+            <a href="singers.html" class = "btn">ARTISTS</a>
+            
+            <a href="contact.html" class = "btn">CONTACT</a>
+            
+            <button id="logoutButton" class="btn" style = "float:right">LOGOUT</button>
+
+            
+        </nav>
+    </header>
+
+</div>
+<br><br>
+</body>
+
+<body>  
+  <style>
+    body {
+      background-image: url('./images/contact.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;  
+    }
+    
+    </style>
+    <div class = "login-container">
+    <h2>Contact Us</h2>
+    <div class="form-group">
+      <form
+        action="https://formspree.io/f/xpzgdaej"
+        method="POST"
+      >
+      <label>
+        Your email:
+        <input type="email" name="email">
+      </label><br><br>
+      <label>
+        Your message:
+        <input type = text name="message">
+       </label><br><br>
+  <!-- your other form fields go here -->
+      <button type="submit" class = "btn" >Send</button>
+      </form>
+    </div>
+    </div>
+</body>
+<script src = logout.js></script>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hindi Songs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      /*background-image:url('guitar.jpeg');*/
+background-color:peachpuff;
+      background-size:260px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      height: 100vh;
+    }
+    .song {
+      margin: 0 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: black;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    audio {
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    audio::-webkit-media-controls-panel {
+      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+    .song-image {
+      width: 200px;
+      height: 300px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>Hindi Songs</h1>
+  <div class="container">
+    <div class="song">
+        <h2>Song 1</h2>
+        <img class="song-image" src="./images/Shershaah.jpg" alt="song 1">
+        <marquee behaviour="scroll">Ranjha(Shershaah)</marquee>
+        <audio controls id="instrumental1">
+        <source src="./audio/hind1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="song-info">
+        <h3>Movie Name: Shershaah</h3>
+        <h4>Actors: Sidharth Malhotra, Kiara Advani</h4>
+        <h4>Singers: Jasleen Royal</h4>
+      </div>
+    </div>
+    <div class="song">
+      <h2>Song 2</h2>
+      <img class="song-image" src="./images/Tere.jpg" alt="song 2">
+        <marquee behaviour="scroll">Tere Vaaste(Zara Hatke Zara Bachke)</marquee>
+    <audio controls id="instrumental2">
+      <source src="./audio/hindi2.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="song-info">
+      <h3>Movie Name: Zara Hatke Zara Bachke</h3>
+      <h4>Actors: Vicky Kaushal,Sara Ali Khan</h4>
+      <h4>Singers: Varun Jain,Shadab Faridi,Altamash Faridi</h4>
+    </div>
+    </div>
+    <div class="song">
+      <h2>Song 3</h2>
+      <img class="song-image" src="./images/tumhiho.jpeg" alt="song 3">
+        <marquee behaviour="scroll">Tum Hi Ho(Aashiqui 2)</marquee>
+    <audio controls id="instrumental3">
+      <source src="./audio/hindi3.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="song-info">
+      <h3>Movie Name: Aashiqui 2</h3>
+      <h4>Actors: Aditi Roy Kapur,Sharddha Kapoor</h4>
+      <h4>Singers: Arjit Singh</h4>
+    </div>
+    </div>
+  </div>
+
+  <script>
+    const instrumentalElements = document.querySelectorAll("audio");
+
+    instrumentalElements.forEach(instrumental => {
+      instrumental.addEventListener("play", () => {
+        pauseOtherInstrumentals(instrumental);
+      });
+    });
+
+    function pauseOtherInstrumentals(currentInstrumental) {
+      instrumentalElements.forEach(instrumental => {
+        if (instrumental !== currentInstrumental && !instrumental.paused) {
+          instrumental.pause();
+        }
+      });
+    }
+  </script>
+</body>
+</html>

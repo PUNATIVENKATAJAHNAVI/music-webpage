@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sid Sriram</title>
+  <link rel="stylesheet" type="text/css" href="songs.css">
+</head>
+<body>
+    <header>
+      <nav>
+          <a href="final.html" class = "btn">HOME</a>
+          <a href="tags.html" class="btn">ALBUMS</a>  
+          <a href="singers.html" class = "btn">ARTISTS</a>
+          <a href="contact.html" class = "btn">CONTACT</a>
+          
+          <button id="logoutButton" class="btn" style = "float:right">LOGOUT</button>        
+      </nav>
+  </header>
+  </body>
+<body>
+  <h1>SPB</h1>
+  <br><br>
+  <div class="container">
+    <div class="song">
+      <!--<h2>Song 1</h2>-->
+      <img class="song-image" src="./images/paruvam.jpg" alt="song 1">
+      <marquee behaviour="scroll">Paruvam Vaanaga(Roja)</marquee>
+      <audio controls id="instrumental1">
+        <source src="./audio/Paruvam Vanaga.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="song-info">
+        <h3>Movie Name: Roja</h3>
+        <h4>Actors: Arvind Swamy, Madhoo</h4>
+        <h4>Singers: SPB, Sujatha</h4>
+      </div>
+    </div>
+
+    <div class="song">
+      <!--<h2>Song 2</h2>-->
+      <img class="song-image" src="./images/nee prashnalu.jpg" alt="song 2">
+      <marquee behaviour="scroll">Nee Prashnalu Neeve(Kotha Bangaru Lokam)</marquee>
+      <audio controls id="instrumental2">
+        <source src="./audio/Nee Prashnalu.mp3.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="song-info">
+        <h3>Movie Name: Kotha Bangaru Lokam</h3>
+        <h4>Actors: Varun Sandesh, Swetha Basu</h4>
+        <h4>Singers: SPB</h4>
+      </div>
+    </div>
+
+    <div class="song">
+      <!--<h2>Song 3</h2>-->
+      <img class="song-image" src="./images/kalyanam.jpg" alt="song 3">
+      <marquee behaviour="scroll">Kalyanam Vaibhogam(Sreenivasava Kalyanam)</marquee>
+      <audio controls id="instrumental3">
+        <source src="./audio/Kalyanam Vybhogam.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="song-info">
+        <h3>Movie Name: Sreenivasa Kalyanam</h3>
+        <h4>Actors: Nithin, Raashi Khanna</h4>
+        <h4>Singers: SPB</h4>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const instrumentalElements = document.querySelectorAll("audio");
+
+    instrumentalElements.forEach(instrumental => {
+      instrumental.addEventListener("play", () => {
+        pauseOtherInstrumentals(instrumental);
+      });
+    });
+
+    function pauseOtherInstrumentals(currentInstrumental) {
+      instrumentalElements.forEach(instrumental => {
+        if (instrumental !== currentInstrumental && !instrumental.paused) {
+          instrumental.pause();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+

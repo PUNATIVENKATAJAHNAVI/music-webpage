@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/musicmetadata/2.0.2/musicmetadata.min.js"
+    />
+    <style>
+    body{
+      background-image: url('photo2.jpg');
+      background-size:cover;
+      background-repeat:no-repeat;
+      
+      }
+      .container{
+      /*max-width:1000px;*/
+      margin:0 auto;
+      padding:0px;
+      /*background-color:white;*/
+      opacity:0.9;
+      }
+      header {
+          /*background-color: lightblue;*/
+          overflow: hidden;
+          background-color: #d07759;
+          padding: 20px;
+          /*width: 100%;*/
+      }
+        
+        header a {
+          /*margin-right:20px;*/
+          text-decoration:none;
+          color: black;
+          font-weight: normal;
+          text-align: center;
+          padding: 12px;
+          text-decoration: none;
+          font-size: 18px;
+          line-height: 25px;
+          border-radius: 4px;
+        }
+       header a:hover {
+        background-color: #f4f0f0dc;
+        color: black;
+      }
+      html, body {
+       margin: 0;
+       
+       
+      }
+      
+      .btn {
+        padding: 10px 20px;
+        background-color: hsla(26, 57%, 74%, 0.707);
+        color: black;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .container-initial {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #050505;
+        border-radius: 5px;
+  
+      }
+      .form-group {
+         margin-bottom: 10px;
+      }
+
+      label {
+        display: block;
+      }
+
+      input[type="text"],
+      input[type="password"], 
+      input[type = "Email"]{
+          width: 100%;
+          padding: 5px;
+          font-size: 16px;
+      }
+
+      h2{
+          text-align: center;
+      }
+      /*form*/
+      
+.form {
+  width: 90vw;
+  max-width: var(--fixed-width);
+  background: var(--white);
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-2);
+  padding: 2rem 2.5rem;
+  margin: 3rem auto;
+}
+.form-label {
+  display: block;
+  font-size: var(--smallText);
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+  letter-spacing: var(--letterSpacing);
+}
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--borderRadius);
+  background: var(--backgroundColor);
+  border: 1px solid var(--grey-200);
+}
+
+.form-row {
+  margin-bottom: 1rem;
+}
+
+.form-textarea {
+  height: 7rem;
+}
+::placeholder {
+  font-family: inherit;
+  color: var(--grey-400);
+}
+.form-alert {
+  color: var(--red-dark);
+  letter-spacing: var(--letterSpacing);
+  text-transform: capitalize;
+}
+      </style>
+  </head>
+
+
+  <body>
+    <div class="container">
+        <header>
+            <nav>
+                <a href="final.html">HOME</a>
+                <a href="tags.html">ALBUMS</a>        
+                <a href="contact.html">CONTACT</a>
+                <a href="soundtrack.html">SOUNDTRACK</a>
+                <button id="logoutButton" class="btn" style = "float:right">LOGOUT</button>                
+            </nav>
+        </header>
+    </div>
+    <div class="container initial">
+        <div class = "form-group">
+          <h2 class = "title">Hear your favouriate playlists</h2>
+          
+      <form>
+        <input type="text" placeholder="Search Your Recipe...">
+        <button type = "submit" class = "search-btn btn" id = "search-btn">
+          <i class = "fas fa-search"></i>
+        </button>
+      </form>
+      </div>
+      </div>
+    <br><br>
+    
+    <script src = logout.js></script>
+    </body>
+    </html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sid Sriram</title>
+  <link rel="stylesheet" type="text/css" href="songs.css">
+</head>
+<body>
+    <header>
+      <nav>
+          <a href="final.html" class = "btn">HOME</a>
+          <a href="tags.html" class="btn">ALBUMS</a>  
+          <a href="contact.html" class = "btn">CONTACT</a>
+          <a href="soundtrack.html" class = "btn">SOUNDTRACK</a>
+          <button id="logoutButton" class="btn" style = "float:right">LOGOUT</button>        
+      </nav>
+  </header>
+  </body>
+<body>
+  <h1>K.S.Chitra</h1>
+  <br><br>
+  <div class="container">
+    <div class="song">
+      <!--<h2>Song 1</h2>-->
+      <img class="song-image" src="./images/antha ishtam.jpg" alt="song 1">
+      <marquee behaviour="scroll">Antha Ishtam(Bheemla Nayak)</marquee>
+      <audio controls id="instrumental1">
+        <source src="./audio/Antha Ishtam.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="song-info">
+        <h3>Movie Name: Bheemla Nayak</h3>
+        <h4>Actors: Pawan Kalyan, Nithya Menon</h4>
+        <h4>Singers: K.S.Chitra</h4>
+      </div>
+    </div>
+
+    <div class="song">
+      <!--<h2>Song 2</h2>-->
+      <img class="song-image" src="./images/yeswasalo.jpg" alt="song 2">
+      <marquee behaviour="scroll">Ye Swasalo(Nenunnanu)</marquee>
+      <audio controls id="instrumental2">
+        <source src="./audio/Ye Swasalo.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="song-info">
+        <h3>Movie Name: Nenunnanu</h3>
+        <h4>Actors: Nagarjuna, Shreya </h4>
+        <h4>Singers: K.S.Chitra</h4>
+      </div>
+    </div>
+
+    <div class="song">
+      <!--<h2>Song 3</h2>-->
+      <img class="song-image" src="./images/kannullo.jpg" alt="song 3">
+      <marquee behaviour="scroll">Kannullo Nee Roopame(Ninne Pelladatha)</marquee>
+      <audio controls id="instrumental3">
+        <source src="./audio/Kannullo Ne Roopame.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="song-info">
+        <h3>Movie Name: Ninne Pelladatha</h3>
+        <h4>Actors: Nagarjuna, Tabu</h4>
+        <h4>Singers: K.S.Chitra</h4>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const instrumentalElements = document.querySelectorAll("audio");
+
+    instrumentalElements.forEach(instrumental => {
+      instrumental.addEventListener("play", () => {
+        pauseOtherInstrumentals(instrumental);
+      });
+    });
+
+    function pauseOtherInstrumentals(currentInstrumental) {
+      instrumentalElements.forEach(instrumental => {
+        if (instrumental !== currentInstrumental && !instrumental.paused) {
+          instrumental.pause();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+

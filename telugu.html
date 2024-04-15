@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Telugu Songs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      /*background-image:url('orange.jpg');*/
+      background-color: peachpuff;
+      background-size: 260px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .song {
+      margin: 0 20px;
+      text-align: center;
+    }
+
+    h1 {
+      color: black;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .song-info {
+      margin-top: 10px;
+    }
+
+    audio {
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    audio::-webkit-media-controls-panel {
+      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+    .song-image {
+      width: 400px;
+      height: 200px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>Telugu Songs</h1>
+  <div class="container">
+    <div class="song">
+      <h2>Song 1</h2>
+      <img class="song-image" src="./images/adipurush.jpg" alt="song 1">
+      <marquee behaviour="scroll">Priya Mithunam(Adipurush)</marquee>
+      <audio controls id="instrumental1">
+        <source src="./audio/telugu.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="song-info">
+        <h3>Movie Name: Adipurush</h3>
+        <h4>Actors: Prabhas, Kriti Sanon</h4>
+        <h4>Singers: Ajay-Atul,Karthik, Shweta Mohan</h4>
+      </div>
+    </div>
+
+    <div class="song">
+      <h2>Song 2</h2>
+      <img class="song-image" src="./images/darling.jpg" alt="song 2">
+      <marquee behaviour="scroll">Nevee Nevee(Darling)</marquee>
+      <audio controls id="instrumental2">
+        <source src="./audio/telugu2.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="song-info">
+        <h3>Movie Name: Darling</h3>
+        <h4>Actors: Prabhas, Kajal agarwal</h4>
+        <h4>Singers: G.V.Prakash Kumar</h4>
+      </div>
+    </div>
+
+    <div class="song">
+      <h2>Song 3</h2>
+      <img class="song-image" src="./images/orange.jpg" alt="song 3">
+      <marquee behaviour="scroll">Chilipiga Chusthavala(Orange)</marquee>
+      <audio controls id="instrumental3">
+        <source src="./audio/telugu3.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="song-info">
+        <h3>Movie Name: Orange</h3>
+        <h4>Actors: Ram Charan, Genelia</h4>
+        <h4>Singers: Harris Jayaraj</h4>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const instrumentalElements = document.querySelectorAll("audio");
+
+    instrumentalElements.forEach(instrumental => {
+      instrumental.addEventListener("play", () => {
+        pauseOtherInstrumentals(instrumental);
+      });
+    });
+
+    function pauseOtherInstrumentals(currentInstrumental) {
+      instrumentalElements.forEach(instrumental => {
+        if (instrumental !== currentInstrumental && !instrumental.paused) {
+          instrumental.pause();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+

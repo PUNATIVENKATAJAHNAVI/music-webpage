@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A.R.Rahman</title>
+  <link rel="stylesheet" type="text/css" href="songs.css">
+</head>
+<body>
+  <header>
+    <nav>
+        <a href="final.html" class = "btn">HOME</a>
+        <a href="tags.html" class="btn">ALBUMS</a>  
+        <a href="contact.html" class = "btn">CONTACT</a>
+        <a href="soundtrack.html" class = "btn">SOUNDTRACK</a>
+        <button id="logoutButton" class="btn" style = "float:right">LOGOUT</button>        
+    </nav>
+</header>
+</body>
+<body>
+  <h1>A.R.Rahman</h1>
+
+  <div class="container">  
+      <div class="song">      
+      <img class="song-image" src="./images/naani.jpg" alt="song 1">
+      <marquee behaviour="scroll">Pedave palikina(Naani)</marquee>
+      <audio controls id="instrumental1">
+        <source src="./audio/Pedave-Palikina.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="song-info">
+        <h3>Movie Name: Naani</h3>
+        <h4>Actors: Mahesh Babu, Ameesha Patel</h4>
+        <h4>Singers: A.R.Rahman</h4>
+      </div>
+    </div>
+
+    <div class="song">      
+      <img class="song-image" src="./images/TereBina.jpg" alt="song 2">
+      <marquee behaviour="scroll">Tere Bina(Guru)</marquee>
+      <audio controls id="instrumental2">
+        <source src="./audio/TereBina.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="song-info">
+        <h3>Movie Name: Guru</h3>
+        <h4>Actors: Abhishek Bachan, Aishwarya Rai</h4>
+        <h4>Singers: A.R.Rahman, Qadir Khan,Chinmayi Sripada,Murtuza Khan</h4>
+      </div>
+    </div>
+
+    <div class="song">      
+      <img class="song-image" src="./images/bombay.jpg" alt="song 3">
+      <marquee behaviour="scroll">Tu Hi Re(Bombay)</marquee>
+      <audio controls id="instrumental3">
+        <source src="./audio/Tu Hi Re.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <div class="song-info">
+        <h3>Movie Name: Bombay</h3>
+        <h4>Actors: Arvind swamy, Manisha Koirala, Sonali Bendre</h4>
+        <h4>Singers: A. R. Rahman, Hariharan, Kavita Krishnamurthy</h4>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    
+    const instrumentalElements = document.querySelectorAll("audio");
+
+    instrumentalElements.forEach(instrumental => {
+      instrumental.addEventListener("play", () => {
+        pauseOtherInstrumentals(instrumental);
+      });
+    });
+
+    function pauseOtherInstrumentals(currentInstrumental) {
+      instrumentalElements.forEach(instrumental => {
+        if (instrumental !== currentInstrumental && !instrumental.paused) {
+          instrumental.pause();
+        }
+      });
+    }
+  </script>
+</body>
+<script src = logout.js></script>
+</html>
+

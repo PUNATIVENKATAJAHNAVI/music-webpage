@@ -1,0 +1,48 @@
+
+body {
+  font-family: Arial, sans-serif;
+  /*background-image:url('guitar.jpeg');*/
+  background-color:peachpuff;
+  background-size:260px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+}
+.song {
+  margin: 0 20px;
+  text-align: center;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.song-info {
+  margin-top: 10px;
+}
+
+audio {
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+audio::-webkit-media-controls-panel {
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.song-image {
+    width: 400px;
+    height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }

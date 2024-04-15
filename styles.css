@@ -1,0 +1,72 @@
+.login-container {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #050505;
+  border-radius: 5px;
+  background-color: white;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background-color: #eda58dcb;
+  
+}
+.form-group {
+  margin-bottom: 10px;
+ 
+}
+
+label {
+  display: block;
+}
+
+input[type="text"],
+input[type="password"], 
+input[type = "Email"]{
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
+  background-color: #dcd7d2;
+}
+
+h2{
+  text-align: center;
+}
+.btn {
+  padding: 10px 20px;
+  background-color: #d07759;
+  color: #cbc7c3;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  
+  text-align: center;
+  margin:0 auto;
+}
+
+.register-link {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.register-link a {
+  /*color: #4CAF50;*/
+  text-decoration: none;
+}
+
+
+.container-contact {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #050505;
+  border-radius: 5px;
+ 
+
+}
+
+
